@@ -1,48 +1,70 @@
-//Digital Business card
-
-import Header from './navigation/header'
-import Footer from './navigation/footer'
-
 import './App.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import Header from './components/header'
+import Body from './components/body';
+import Navbar from './components/navbar';
+import Footer from './components/footer'
+import { useEffect, useState } from 'react';
 
+export default function App(){
+    const [mode, setMode] = useState(false)
 
-function App() {
+    function toggleDarkMode(){
+        setMode(prevMode => !prevMode)
+    }
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-  return (
-    <>
+    useEffect(() => {
+
+        window.addEventListener('resize', watchWidth )
+
+        function watchWidth () {
+            setWindowWidth(window.innerWidth)
+            console.log(windowWidth)
+
+        }
+        // return () =>{
+        //     removeEventListener('resize', watchWidth)
+        //     console.log("clean")
+        // }
+
+    }, [windowWidth])
+    
+    const[isMenuClicked, setIsMenuClicked] = useState(false)
+    
+    function menuClicked () {
+        setIsMenuClicked(prevMode => !prevMode)
+    }
+
+    return (
+        <div className={mode?"container dark": "container"}>
+        <Navbar
+            toggle = {toggleDarkMode}
+            darkmode = {mode}
+            toggleMenu = {menuClicked}
+            isMenuClicked = {isMenuClicked}
+
+         />
+        <Header
         
-        <Header />
-        <div className='mainbody'>
-          <h4 className='mainbody-title'> About </h4>
-          <p className='mainbody-content'> 
-              I&apos;m Michael Amao. A 300 level software engineering student at Babcock University. I started off with frontend development, though I&apos;m not much of a creative. I started with learning React JS, struggled with styling a bit, but I was able to cope. Eventually, I left frontend after styling gave me a lot of headache while working on a school project. I then took a look at backend development, watched some youtube videos and decided to learn PHP. 
-          
-          </p>
-          <h4 className='mainbody-title'>Interests </h4>
-          <p className='mainbody-content' >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat asperiores voluptate voluptates excepturi sequi aut voluptatibus recusandae, explicabo nulla porro veritatis quas nihil earum eaque aperiam delectus sint debitis deleniti!
-          </p>
-          <details>
-            <summary className='mainbody-title'>Read more</summary>
-            <p className='mainbody-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat asperiores voluptate voluptates excepturi sequi aut voluptatibus recusandae, explicabo nulla porro veritatis quas nihil earum eaque aperiam delectus sint debitis deleniti!</p>
-          </details>
-          <ul className='list'>
-          <b className='list-title'>Stack</b>
-                    <li>HTML</li>
-                    <li>CSS <FontAwesomeIcon icon="" /> </li>
-                    <li>Javascript</li>
-                    <li>React</li>
-                    <li>PHP</li>
-                    
-                </ul>
-        <Footer />
+            darkmode = {mode}
+            isMenuClicked = {isMenuClicked}
+        
+         />
+        <Body
+
+            darkmode = {mode}
+            />
+        <Footer
+
+            darkmode = {mode}
+            />
+
+
+
+
         </div>
-     </> 
-  )
+    )
 
 
 }
-
-export default App
