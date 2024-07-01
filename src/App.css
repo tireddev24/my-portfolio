@@ -731,7 +731,9 @@ margin-bottom: 5px;
 .footer {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding-top: 20px;
   padding-bottom: 15px;
   border-top: 1px solid  #8a045c ;
@@ -758,28 +760,11 @@ margin-bottom: 5px;
     justify-content: center;
   }
 
-
-    .react {
-      margin-left: 20px;
-    }
-    
-    .footer-logo, .footer-react, .footer-vite {
+    .footer-logo {
       width: 40px;
       margin: 0 50px 3px 0;
       transition: 1.0s ease;
       
-      }
-
-      .footer-react {
-        margin-left: 10%;
-        animation: rotate 2.5s linear infinite  ;
-        
-      }
-      .footer-vite{
-        margin-right: 10%;
-      }
-      .footer-react:hover, .footer-vite:hover{
-        filter: drop-shadow(0 0 30px rgb(11,9,133) );
       }
       
       .footer-logo:hover{
@@ -884,14 +869,6 @@ margin-bottom: 5px;
                   width: 28px;
                   margin: 0 30px 3px 0;
                 }       
-                .footer-react{
-                  margin-left: 20px;
-                  margin-right: 0;
-                } 
-                .footer-vite{
-                  margin-right: 30px;
-                  margin-left: 0;
-                }
                 .footer{
                   font-size: 15px;
                 }
@@ -906,7 +883,7 @@ margin-bottom: 5px;
              #root{
               /* height: max-content; */
               overflow: hidden;
-              width: max-content;
+              /* width: max-content; */
              }
              .navbar{
               align-items: center;
@@ -947,10 +924,6 @@ margin-bottom: 5px;
             
             }
               .footer{
-
-                /* position: relative; */
-                /* display: grid; */
-
                 font-size: 15px;
                 grid-template: 15px 15px / 1fr 1fr;
 

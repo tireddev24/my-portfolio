@@ -6,9 +6,8 @@ import '../App.css'
 import instagram from '../assets/instagram-logo-bold.svg'
 import github from '../assets/github-logo-bold.svg'
 import twitter from '../assets/twitter-logo-bold.svg'
-import mail from '../assets/envelope.svg'
-import react from '../assets/react.svg'
-import vite from '../assets/vite.svg'
+import mail from '../assets/envelope-bold.svg'
+
 
 
 function Footer (props){
@@ -17,7 +16,6 @@ function Footer (props){
         <>
         <footer className={props.darkmode?"footer dark" : 'footer'} id='footer'>
             
-            <img src={react} className='footer-react'/>
             <div className='footer-main'>
             <span>
             <a href="mailto:michaelamao442@gmail.com"> 
@@ -35,7 +33,6 @@ function Footer (props){
             </span>
           <small>&copy; 2024 TiredDev Development. All rights reserved.</small>
           </div>
-          <img src={vite} className='footer-vite' />
         </footer>
         </>
     )
