@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 // import Navbar from './navbar'
-import photo from "../assets/photo.png"
+
+import photo from "../images/photo.png"
 import mail from '../assets/envelope.svg'
-// import linkedin from '../assets/linkedin-dark.svg'
 import codelight from '../assets/code-light.svg';
 import codedark from '../assets/code-dark.svg'
+
 function Header (props) {
 
 
@@ -17,8 +18,11 @@ function Header (props) {
                 <div className="header-info">
 
 
-                <p className="header-name"><div>Hi, I&apos;m Michael</div>{!props.isMenuClicked &&<div className="header-name-emoji" >
-                 &#128075;&#127997; </div>} </p>
+                <p className="header-name">
+                <div>Hi, I&apos;m Michael</div>
+                {!props.isMenuClicked &&<div className="header-name-emoji" >
+                 &#128075;&#127997; </div>} 
+                 </p>
 
                 {/* <div className="spinner"></div> */}
 
@@ -33,12 +37,6 @@ function Header (props) {
                         <a href="mailto:michaelamao442@gmail.com"
                         className="header-email-link" > Email </a>
                     </div>
-{/* 
-                    <div className="header-linkedin">
-                        <img src={linkedin} className="linkedin-icon"/>
-                        <a className="header-linkedin-link"> LinkedIn </a>
-                    </div> */}
-            
         
                 </div>
                 </div>

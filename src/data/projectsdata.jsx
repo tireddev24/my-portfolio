@@ -1,8 +1,8 @@
 
-import portfolio from '../assets/portfolio.png'
-import cafeteria from '../assets/cafeteria-services.png';
-import memegen from '../assets/meme-gen.png'
-import tenzies from '../assets/tenzies.png'
+import portfolio from '../images/portfolio.png'
+import cafeteria from '../images/cafeteria-services.png';
+import memegen from '../images/meme-gen.png'
+import tenzies from '../images/tenzies.png'
 
 
 
@@ -11,22 +11,31 @@ export default [
     {
         id: 1,
         projectName: "Portfolio",
-        projectImage: `${portfolio}`
+        projectImage: `${portfolio}`,
+        url : "https://michael-amao-portfolio.netlify.app/",
+        alt : "Portfolio"
+
     },
     {
         id: 2,
         projectName: "Cafeteria",
-        projectImage: `${cafeteria}`
+        projectImage: `${cafeteria}`,
+        url : "https://cafeteria-site.netlify.app/",
+        alt : "Cafeteria"
     },  
      {
         id : 3,
         projectName : "Meme Generator",
-        projectImage : `${memegen}`
+        projectImage : `${memegen}`,
+        url : "https://meme-gen1.netlify.app/",
+        alt : "Meme gen "
     },
     {
         id : 4,
         projectName : "Tenzies Game",
-        projectImage : `${tenzies}`
+        projectImage : `${tenzies}`,
+        url : "https://tenziess-game1.netlify.app/",
+        alt : "Tenzies Game "
     }
 
 ]

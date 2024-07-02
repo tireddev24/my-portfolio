@@ -9,13 +9,11 @@ import twitter from '../assets/twitter-logo-bold.svg'
 import mail from '../assets/envelope-bold.svg'
 
 
-
 function Footer (props){
 
     return (
         <>
         <footer className={props.darkmode?"footer dark" : 'footer'} id='footer'>
-            
             <div className='footer-main'>
             <span>
             <a href="mailto:michaelamao442@gmail.com"> 
@@ -31,7 +29,7 @@ function Footer (props){
                 <img src={twitter} className='footer-logo' /> 
             </a>
             </span>
-          <small>&copy; 2024 TiredDev Development. All rights reserved.</small>
+          <small>&copy; 2024 TiredDev Development.</small>
           </div>
         </footer>
         </>

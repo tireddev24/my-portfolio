@@ -7,11 +7,19 @@ import Footer from './components/footer'
 import { useEffect, useState } from 'react';
 
 export default function App(){
-    const [mode, setMode] = useState(false)
+    const [mode, setMode] = useState(JSON.parse(sessionStorage.getItem('mode')) || false ) 
+    // console.log(mode)
 
+    
     function toggleDarkMode(){
         setMode(prevMode => !prevMode)
     }
+    
+    useEffect(() => {    
+        sessionStorage.setItem('mode', JSON.stringify(mode))
+    },[mode])
+
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
     useEffect(() => {
@@ -23,10 +31,6 @@ export default function App(){
             console.log(windowWidth)
 
         }
-        // return () =>{
-        //     removeEventListener('resize', watchWidth)
-        //     console.log("clean")
-        // }
 
     }, [windowWidth])
     
