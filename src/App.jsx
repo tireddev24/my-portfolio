@@ -40,6 +40,7 @@ export default function App(){
         setIsMenuClicked(prevMode => !prevMode)
     }
 
+
     return (
         <div className={mode?"container dark": "container"}>
         <Navbar

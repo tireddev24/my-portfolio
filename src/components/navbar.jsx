@@ -37,13 +37,13 @@ function Navbar(props){
         
         
         return (
-            <>
+            <div className='cont'>
             <div className={props.darkmode? "navbar dark" : 'navbar'}>
                   
                   {!width &&
-                    <div className='hamburger'>
+                    <div onClick={props.toggleMenu} className = {props.isMenuClicked ? "hamburger hide" : 'hamburger' } >
 
-                <div  href=''  onClick={props.toggleMenu} className='burger-menu'>
+                <div  className='burger-menu'>
                     <div className={burgerClass} ></div>
                     <div className={burgerClass} ></div>
                     <div className={burgerClass} ></div>
@@ -52,8 +52,23 @@ function Navbar(props){
                     </div>
                   }
                 <div className={menuClass} onClick={props.toggleMenu}>
+                  <div className='move-left'>
+
+                {!width &&
+                    <div  className='hamburger show'>
+
+                <div   className='burger-menu show'>
+                    <div className={burgerClass} ></div>
+                    <div className={burgerClass} ></div>
+                    <div className={burgerClass} ></div>
+                </div>
+                    </div>
+                  } 
+                  </div>
+
+                
                 <a href='#top' className='navbar-home'>Home</a>
-                    <a href="#blog" className='navbar-blog'>Blog</a>
+                    <a href="#blog" className='navbar-blog'>About</a>
                     <a href="#projects" className='navbar-projects'>Projects</a>
                     <a href="#footer" className='navbar-contact'>Contact</a>
                     
@@ -69,7 +84,7 @@ function Navbar(props){
                 
                 {width && <div className='navbar-links'>
                     <a href='#top' className='navbar-home'>Home</a>
-                    <a href="#blog" className='navbar-blog'>Blog</a>
+                    <a href="#blog" className='navbar-blog'>About</a>
                     <a href="#projects" className='navbar-projects'>Projects</a>
                     <a href="#footer" className='navbar-contact'>Contact</a>
                     
@@ -94,7 +109,7 @@ function Navbar(props){
                   </div>
                 </div> */}
             </div>
-        </>
+        </div>
     )
 }
 

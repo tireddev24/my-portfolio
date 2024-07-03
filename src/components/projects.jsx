@@ -11,13 +11,13 @@ export default function Projects (props) {
     return (
 
         
-        <ul className={props.darkmode? "mainbody-projects-list dark": "mainbody-projects-list"}>
-          <li className="mainbody-projects-link" >
+        <ul className="projects list">
+          <li className="projects link" >
             <a href={url} target='_blank'>{props.projectName}
             </a>
             <img src={props.projectImage} 
             alt={props.alt} 
-            className='mainbody-projects-img'
+            className='projects img'
             />
           </li>
             <map name='map' >

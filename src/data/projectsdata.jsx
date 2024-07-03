@@ -27,7 +27,7 @@ export default [
         id : 3,
         projectName : "Meme Generator",
         projectImage : `${memegen}`,
-        url : "https://meme-gen1.netlify.app/",
+        url : "https://meme-gen-1.netlify.app/",
         alt : "Meme gen "
     },
     {

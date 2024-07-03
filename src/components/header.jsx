@@ -18,11 +18,11 @@ function Header (props) {
                 <div className="header-info">
 
 
-                <p className="header-name">
+                <div className="header-name">
                 <div>Hi, I&apos;m Michael</div>
-                {!props.isMenuClicked &&<div className="header-name-emoji" >
-                 &#128075;&#127997; </div>} 
-                 </p>
+                <div className="header-name-emoji" >
+                 &#128075;&#127997; </div>
+                 </div>
 
                 {/* <div className="spinner"></div> */}
 
