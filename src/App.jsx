@@ -7,7 +7,7 @@ import Footer from './components/footer'
 import { useEffect, useState } from 'react';
 
 export default function App(){
-    const [mode, setMode] = useState(JSON.parse(sessionStorage.getItem('mode')) || false ) 
+    const [mode, setMode] = useState(JSON.parse(localStorage.getItem('mode')) || false ) 
     // console.log(mode)
 
     
@@ -16,7 +16,7 @@ export default function App(){
     }
     
     useEffect(() => {    
-        sessionStorage.setItem('mode', JSON.stringify(mode))
+        localStorage.setItem('mode', JSON.stringify(mode))
     },[mode])
 
 
@@ -51,7 +51,6 @@ export default function App(){
 
          />
         <Header
-        
             darkmode = {mode}
             isMenuClicked = {isMenuClicked}
         

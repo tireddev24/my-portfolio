@@ -35,6 +35,8 @@ details {
   justify-content: space-between;
   align-items: center;
   box-shadow:  0 0 10px #8a045c;
+  background: linear-gradient(45deg, rgba(81, 0, 255, 0.261), rgba(81, 11, 179, 0.241), rgba(128, 0, 128, 0.217), rgba(9, 4, 154, 0.252));
+  background-color: #fff;
   transition:  0.5s ease-in-out;
   z-index: 1000;
 }
@@ -458,6 +460,8 @@ details {
 .mainbody-projects ,.mainbody-more, .mainbody-stack{
   width: 65%;
 }
+
+
 .mainbody-stack{
   margin-top: 20px;
   font-size: 18px;
@@ -696,7 +700,8 @@ details {
             }
             .header{
               flex-direction: column;
-              padding: 40px;
+              padding-bottom: 0px;
+              margin-bottom: 0;
             }
             .header-photo{
               margin-left: 0;
@@ -705,8 +710,12 @@ details {
               margin: 0;
               margin-top: 10px;
             }
+            .header-role-icon{
+              width: 40px;
+            }
             .mainbody{
-              margin-top: 5px;
+              margin: 0;
+              margin-top: -10px;
             }
             .footer{
               margin-top: 60px;
@@ -843,11 +852,6 @@ details {
              .projects.title, .more.title {
               font-size: 18px;
             }       
-            .mainbody-about, .mainbody-interests,
-            .mainbody-projects{
-              padding-top: 50px;
-            }
-          
             .about.content, .interests.content,
              .more.content,.projects.list, .stack.list{
               font-size: 16px;
@@ -877,7 +881,7 @@ details {
                   width: 100%;
                 }
                 .header{
-                  padding-top: 80px;
+                  padding-top: 90px;
                 }
                 .header-photo{
                   margin-top: 10px;
@@ -887,7 +891,8 @@ details {
                   font-size: 35px;
                 }
                 .mainbody{
-                  margin: 0px -60px;
+                  margin: -15px -60px;
+                  
                  }
                 .about.title, .interests.title,
                 .projects.title, .more.title, .stack.title{

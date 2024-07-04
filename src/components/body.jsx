@@ -21,7 +21,7 @@ export default function Body (props) {
     return (
       
         <div className={props.darkmode? 'mainbody dark' : 'mainbody'}>
-        <section className='mainbody-about' id="blog">
+        <section className='mainbody-about' >
         <h4 className='about title'> About </h4>
         <p className='about content'> I&apos;m 
            <b> Michael Amao. </b> A 300 level software engineering student at Babcock University, Ilishan-Remo, Ogun State, Nigeria. I work with React JS. 
@@ -33,16 +33,16 @@ export default function Body (props) {
 
         <h4 className='interests title'>Interests </h4>
         <div className='interests content' >
-          <ol className="interest-list">
+          <ol className="interest-list" id="projects">
             <li>Frontend Development</li>
-            <li>Backend Development</li>
-            <li>Machine learning, AI Development</li>
+            <li >Backend Development</li>
+            <li >Machine learning, AI Development</li>
           </ol>
                 
         </div>
         
           </section>
-          <section className="mainbody-projects" id="projects">
+          <section className="mainbody-projects" >
           <p className="projects title">Projects</p>
               {projects}
           

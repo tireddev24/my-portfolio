@@ -32,7 +32,7 @@ function Header (props) {
 
                 <div className="header-links">
 
-                    <div className="header-email">
+                    <div className="header-email" id='blog'>
                         <img src={mail} className="email-icon"/> 
                         <a href="mailto:michaelamao442@gmail.com"
                         className="header-email-link" > Email </a>
