@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import Projects from "./projects";
+import data from "../data/data";
 import projectsdata from "../data/projectsdata";
 
 export default function Body (props) {
@@ -24,7 +25,7 @@ export default function Body (props) {
         <section className='mainbody-about' >
         <h4 className='about title'> About </h4>
         <p className='about content'> I&apos;m 
-           <b> Michael Amao. </b> A 300 level software engineering student at Babcock University, Ilishan-Remo, Ogun State, Nigeria. I work with React JS. 
+           <b> {data[0].fullName}. </b> {data[0].about}
         
         </p>
         </section>
@@ -34,9 +35,9 @@ export default function Body (props) {
         <h4 className='interests title'>Interests </h4>
         <div className='interests content' >
           <ol className="interest-list" id="projects">
-            <li>Frontend Development</li>
-            <li >Backend Development</li>
-            <li >Machine learning, AI Development</li>
+            <li>{data[0].interests[0]}</li>
+            <li >{data[0].interests[1]}</li>
+            <li >{data[0].interests[2]}</li>
           </ol>
                 
         </div>

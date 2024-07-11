@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 // import Navbar from './navbar'
+import data from "../data/data";
 
 import photo from "../images/photo.png"
 import mail from '../assets/envelope.svg'
@@ -19,7 +20,7 @@ function Header (props) {
 
 
                 <div className="header-name">
-                <div>Hi, I&apos;m Michael</div>
+                <div>Hi, I&apos;m {data[0].firstName}</div>
                 <div className="header-name-emoji" >
                  &#128075;&#127997; </div>
                  </div>
@@ -27,7 +28,7 @@ function Header (props) {
                 {/* <div className="spinner"></div> */}
 
                 <div className="header-role"><a href="https://en.m.wikipedia.org/wiki/Front-end_web_development" target="_blank">
-                Frontend Developer </a><img className="header-role-icon"
+                {data[0].role} </a><img className="header-role-icon"
                  src={props.darkmode? codelight : codedark}/> </div>
 
                 <div className="header-links">
