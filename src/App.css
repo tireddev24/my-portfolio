@@ -15,6 +15,15 @@ button, a {
 details {
   cursor: pointer;
 }
+.resume{
+  position: fixed;
+  background-color: red;
+  padding: 10px;
+  left: 20px;
+  top: 170px;
+  cursor: pointer;
+  border-radius: 10px;
+}
 .container{
  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) ;
   color: black;
@@ -35,8 +44,8 @@ details {
   justify-content: space-between;
   align-items: center;
   box-shadow:  0 0 10px #8a045c;
-  background: linear-gradient(45deg, rgba(81, 0, 255, 0.261), rgba(81, 11, 179, 0.241), rgba(128, 0, 128, 0.217), rgba(9, 4, 154, 0.252));
-  background-color: #fff;
+  background: linear-gradient(45deg, rgba(81, 0, 255, 0.161), rgba(81, 11, 179, 0.241), rgba(128, 0, 128, 0.217), rgba(9, 4, 154, 0.252));
+  background-color: rgba(255, 255, 255, 0.906);
   transition:  0.5s ease-in-out;
   z-index: 1000;
 }
@@ -131,8 +140,6 @@ details {
       flex-direction: column;
       padding: 20px;
       overflow: hidden;
-      /* transition: cubic-bezier(0.175, 0.885, 0.32, 1.275), 0.5s;   */
-      /* transition: 0.5s ease; */
       left: -250px;
       top: -700px;
       }
@@ -191,8 +198,7 @@ details {
   margin-right: 10%;
   text-decoration: none;
   }
-  .navbar-home, .navbar-projects,
-   .navbar-contact, .navbar-blog {
+  .links {
     margin-right: 17%;
     bottom: -10px;
     border:  2px solid transparent;
@@ -203,15 +209,13 @@ details {
     letter-spacing: 1px;
     text-decoration: none;
 }
-  .navbar-home:hover,.navbar-contact:hover,
-   .navbar-blog:hover, .navbar-projects:hover{
+  .links:hover{
       border-top: 2px solid #6f04d9;
       border-bottom: 2px solid #6f04d9;
       transform: scale(1.1);
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;  
     }
-   .navbar.dark .navbar-home:hover, .navbar.dark .navbar-contact:hover, 
-   .navbar.dark .navbar-blog:hover, .navbar.dark .navbar-projects:hover{
+   .navbar.dark .links:hover{
     border-top: 2px solid rgb(0, 174, 255);
     border-bottom: 2px solid rgb(0, 174, 255);
    }
@@ -456,24 +460,22 @@ details {
 .mainbody.dark a {
   color: white;
 }
-.mainbody-about, .mainbody-interests,
-.mainbody-projects ,.mainbody-more, .mainbody-stack{
+
+.mainbody-content{
   width: 65%;
 }
 
-
-.mainbody-stack{
+.mainbody-content.stack{
   margin-top: 20px;
   font-size: 18px;
   line-height: 40px;
 }
 
-.about.title, .interests.title,
- .projects.title, .more.title, .stack.title {
+.title {
   padding: 7px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  border-left: 4px solid ;
+  border-left: 4px solid #000;
   border-bottom: 5px solid #8a045c ;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -483,13 +485,10 @@ details {
   font-size: 20px;
   font-weight: 600;
   font-family: 'Trebuchet Ms';
-}
+} 
 
-.mainbody.dark .about.title, 
-.mainbody.dark .interests.title, 
-.mainbody.dark .projects.title,
-.mainbody.dark .more.title,
-.mainbody.dark .stack.title {
+
+.mainbody.dark .title{
   border-color: rgb(0, 174, 255);
 }
 .more.title{
@@ -502,12 +501,13 @@ details {
 
 .more.title::marker{
   color:#6a055d ;
+  
 }
 .mainbody.dark .more.title::marker{
   color: rgb(0, 174, 255);
 }
 
-.about.content, .interests.content, .more.content{
+.content{
   text-indent: 2%;
   margin-left: 3%;
   line-height: 1.4rem;
@@ -528,7 +528,7 @@ details {
 .mainbody.dark .about.content > b {
   color: rgb(0, 221, 255);
 }
-.interest-list{
+.interest.list{
   font-weight: 500;
   font-family:  'Trebuchet Ms';
 }
@@ -602,8 +602,8 @@ details {
 .projects.link a::before{
   border-bottom-left-radius:  15px;
   border-bottom-color: #6f04d9;
-  
 }
+
 .mainbody.dark .projects.link a::before{
   border-bottom-color: rgb(0, 221, 255);
 }
@@ -618,10 +618,7 @@ details {
   cursor: default;
 }
 
-.projects.img:hover{
-  transform: scale(1.03);
-
-}
+.projects.img:hover{ transform: scale(1.03); }
 
 .stack.list > li {
   list-style: square;
@@ -634,6 +631,19 @@ details {
   }
   .mainbody.dark .stack.list > li::marker{
   color: rgb(0, 174, 255);
+}
+
+.contact.content  { margin-left: 10px;  }
+.contacts{
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+}
+.contacts>img{
+  height: 35px;
+}
+.contacts>div{
+  margin-left: 10px;
 }
 
 .footer {
@@ -656,8 +666,8 @@ details {
   font-weight: 600;
   transition: 1.0s ease;
   letter-spacing: 3px;
-  
   }
+
   .footer.dark{
     border-color: #fff;
       color: #fff;
@@ -695,7 +705,7 @@ details {
             .navbar-title-text{
               font-size: smaller;
             }
-            .navbar-home, .navbar-projects, .navbar-contact, .navbar-blog {
+            .links {
               margin-right: 7%;
             }
             .header{
@@ -720,7 +730,6 @@ details {
             .footer{
               margin-top: 60px;
             }
-            
           }
           
             @media (max-width: 1000px ) {
@@ -770,12 +779,10 @@ details {
               .mainbody{
                 padding: 0;
               }
-              .about.title, .interests.title,
-              .project.title,.stack.title,.more.title{
+             .title{
                 font-size: 18px;
               }
-              .about.content, .interests.content,
-              .stack.list, .more.content{
+            .content{
                 font-size: 17px;
               }
               .projects.img{
@@ -789,7 +796,6 @@ details {
               width: 35px;
               margin: 0 25px;
             }
-
           }
               
               @media (max-width:720px){
@@ -813,7 +819,6 @@ details {
                   width: 28px;
                   margin: 0 20px;
                 }       
-
               }
             
             @media (max-width: 512px){
@@ -848,29 +853,24 @@ details {
              .about.content{
               font-size: 20px;
              }
-             .about.title, .interests.title,
-             .projects.title, .more.title {
+            .title {
               font-size: 18px;
             }       
-            .about.content, .interests.content,
-             .more.content,.projects.list, .stack.list{
+            .content, .list{
               font-size: 16px;
             }
             .projects.img{
               height: 300px;
               width: 300px;
             }
-
               .footer{
                 font-size: 15px;
                 grid-template: 15px 15px / 1fr 1fr;
-
               }                 
               .footer-logo{
                 width: 35px;
                 margin: 0 20px;
               }        
-
               }
 
               @media only screen and (max-width:490px) {
@@ -894,8 +894,7 @@ details {
                   margin: -15px -60px;
                   
                  }
-                .about.title, .interests.title,
-                .projects.title, .more.title, .stack.title{
+                .title{
                   font-size: 17px;
                   letter-spacing: 3px;
                 }
@@ -947,13 +946,11 @@ details {
                   margin: 5px;
                   margin-left: -30px;
                 }
-                .about.title, .interests.title,
-                .projects.title, .more.title, .stack.title{
+                .title{
                   font-size: 15px;
                   letter-spacing: 3px;
                 }
-                .about.content, .interests.content, .more.content,
-                .projects.list, .stack.list{
+               .content,.list{
                   font-size: 14px;
                 }
                 .projects.img{

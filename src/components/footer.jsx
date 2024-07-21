@@ -6,7 +6,7 @@ import '../App.css'
 import instagram from '../assets/instagram-logo-bold.svg'
 import github from '../assets/github-logo-bold.svg'
 import twitter from '../assets/twitter-logo-bold.svg'
-import mail from '../assets/envelope-bold.svg'
+// import mail from '../assets/envelope-bold.svg'
 
 
 function Footer (props){
@@ -16,9 +16,9 @@ function Footer (props){
         <footer className={props.darkmode?"footer dark" : 'footer'} id='footer'>
             <div className='footer-main'>
             <span>
-            <a href="mailto:michaelamao442@gmail.com"> 
+            {/* <a href="mailto:michaelamao442@gmail.com"> 
                 <img src={mail} className="footer-logo"/> 
-            </a>
+            </a> */}
             <a href='https://www.instagram.com/_sore.funmi?igsh=MWhzeXJsZTM4cWJ5dg==' target='_blank'>
                 <img src={instagram} className='footer-logo'/>
             </a>

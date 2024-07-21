@@ -67,10 +67,10 @@ function Navbar(props){
                   </div>
 
                 
-                <a href='#top' className='navbar-home'>Home</a>
-                    <a href="#blog" className='navbar-blog'>About</a>
-                    <a href="#projects" className='navbar-projects'>Projects</a>
-                    <a href="#footer" className='navbar-contact'>Contact</a>
+                  <a href='#top' className='links home'>Home</a>
+                    <a href="#blog" className='links blog'>About</a>
+                    <a href="#projects" className='links projects'>Projects</a>
+                    <a href="#contact" className='links contact'>Contact</a>
                     
                 </div>
 
@@ -83,10 +83,10 @@ function Navbar(props){
                 
                 
                 {width && <div className='navbar-links'>
-                    <a href='#top' className='navbar-home'>Home</a>
-                    <a href="#blog" className='navbar-blog'>About</a>
-                    <a href="#projects" className='navbar-projects'>Projects</a>
-                    <a href="#footer" className='navbar-contact'>Contact</a>
+                    <a href='#top' className='links home'>Home</a>
+                    <a href="#blog" className='links blog'>About</a>
+                    <a href="#projects" className='links projects'>Projects</a>
+                    <a href="#contact" className='links contact'>Contact</a>
                     
                 </div>
                 }
