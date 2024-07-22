@@ -1,12 +1,9 @@
 
 import phone from '../assets/phone-fill.svg'
 import mail from '../assets/envelope-bold.svg'
-
 import data from '../data/data'
 
-
 export default function Contact(){
-
 
 
 return (

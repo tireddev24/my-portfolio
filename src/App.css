@@ -847,12 +847,6 @@ details {
              .mainbody{
               margin: 0px -85px;
              }
-             .about.title{
-              font-size: 12px;
-             }
-             .about.content{
-              font-size: 20px;
-             }
             .title {
               font-size: 18px;
             }       
@@ -863,12 +857,18 @@ details {
               height: 300px;
               width: 300px;
             }
+            .contacts>img{
+              height: 25px ;
+            }
+            .contacts{
+              font-size: 15px;
+            }
               .footer{
                 font-size: 15px;
                 grid-template: 15px 15px / 1fr 1fr;
               }                 
               .footer-logo{
-                width: 35px;
+                width: 32px;
                 margin: 0 20px;
               }        
               }
@@ -950,7 +950,7 @@ details {
                   font-size: 15px;
                   letter-spacing: 3px;
                 }
-               .content,.list{
+               .content, .list{
                   font-size: 14px;
                 }
                 .projects.img{

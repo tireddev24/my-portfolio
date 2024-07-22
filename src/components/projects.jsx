@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import '../App.css'
+
 
 export default function Projects (props) {
 
