@@ -289,7 +289,7 @@ details {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 100px;
   transition:  0.3s ease;
   padding: 50px;
   padding-top: 140px;
@@ -300,9 +300,9 @@ details {
   }
 
  .header-photo{
-  margin-left: 200px;
-  border-radius: 8px;
-  width: 550px;
+  margin-left: auto;
+  border-radius: 25% ;
+  width: 450px;
   transition:  0.3s ease;
   }
   
@@ -311,8 +311,7 @@ details {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 200px ;
-  margin-left: 30px ;
+  margin-right: auto;
   transition:  0.3s ease;
 }
 
@@ -750,12 +749,10 @@ details {
                 margin-right: 20%;
               }
               .header{
-                margin: 0;
                 position: relative;
                 flex-direction: column;
                 padding-top: 100px;
                 padding-bottom: 2px;
-                margin-right: 0;
               }
               .header-name{
                 font-size: 45px;
@@ -773,9 +770,7 @@ details {
               .header-photo{
                 width: 500px;
               }
-              .header-info{
-                margin-right: 0;
-              }
+           
               .mainbody{
                 padding: 0;
               }
@@ -803,10 +798,12 @@ details {
                   overflow-x: hidden;
                 }
                 .header{
-                  margin: 0 10px;
+                  /* margin: 0 10px; */
+                  gap: 4px;
                 }
                 .header-photo{
-                  margin: 0 20px;
+                  /* margin: 0 20px; */
+                  transform: scale(.9);
                 } 
                 .projects.img{
                   height: 360px;
@@ -834,9 +831,11 @@ details {
              }
              .header{
                padding-top: 120px;
+               gap: 2px;
              }
              .header-photo{
-              width: 400px;
+              margin-bottom: 0;
+
              }
              .header-name{
               font-size: 35px;
@@ -885,7 +884,7 @@ details {
                 }
                 .header-photo{
                   margin-top: 10px;
-                  width: 105%;
+                  width: 25px;
                 }
                 .header-name{
                   font-size: 35px;

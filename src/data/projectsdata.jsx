@@ -20,7 +20,7 @@ export default [
         id: 2,
         projectName: "Cafeteria",
         projectImage: `${cafeteria}`,
-        url : "https://cafeteria-site.netlify.app/",
+        url : "",
         alt : "Cafeteria"
     },  
      {
