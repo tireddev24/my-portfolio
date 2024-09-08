@@ -2,7 +2,8 @@
 
 Projects 📈 , skillset 🔧 , specialities 🦾
 
-![Portfolio](https://github.com/mich-demo23/my-portfolio/assets/138993304/f41b47f0-e14a-4c82-9e6b-dfb70f79d893)
+![portfolio (3)](https://github.com/user-attachments/assets/2411f90f-3d23-429c-98ab-ad7528215d59)
+
 
 
 
