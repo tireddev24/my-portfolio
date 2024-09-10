@@ -1,10 +1,12 @@
-import './App.css'
-
+/* eslint-disable react/prop-types */
+import './index.css'
+// import './App.css'
 import Header from './components/header'
 import Body from './components/body';
 import Navbar from './components/navbar';
 import Footer from './components/footer'
 import { useEffect, useState } from 'react';
+
 
 export default function App(){
     const [mode, setMode] = useState(JSON.parse(localStorage.getItem('mode')) || false ) 
@@ -40,33 +42,21 @@ export default function App(){
         setIsMenuClicked(prevMode => !prevMode)
     }
 
-
     return (
-        <div className={mode?"container dark": "container"}>
-        <Navbar
+        <div className='overflow-hidden bg-white dark:bg-slate-900 dark:text-white   '>
+        {/* <RouterProvider router={router}/> */}
+        <Navbar 
             toggle = {toggleDarkMode}
             darkmode = {mode}
             toggleMenu = {menuClicked}
             isMenuClicked = {isMenuClicked}
-
-         />
+        />
         <Header
             darkmode = {mode}
-            isMenuClicked = {isMenuClicked}
+            />
+        <Body />
         
-         />
-        <Body
-
-            darkmode = {mode}
-            />
-        <Footer
-
-            darkmode = {mode}
-            />
-
-
-
-
+        <Footer />
         </div>
     )
 

@@ -1,71 +1,28 @@
 /* eslint-disable react/prop-types */
 
-import data from "../data/data";
-import Contact from './contact';
-import Project from "./project";
+// import { Outlet } from "react-router-dom";
+import { TbDownload } from "react-icons/tb";
+import About from "./about";
+import Projects from "./projects";
 
-export default function Body (props) {
+export default function Body () {
 
 
     return (
       
-        <div className={props.darkmode? 'mainbody dark' : 'mainbody'}>
-        <section className='mainbody-content about' >
-        <h4 className='about title'> About </h4>
-        <p className='about content'> I&apos;m 
-           <b> {data[0].fullName}. </b> {data[0].about}
+        <div className=' relative mainbody scale-95 phoneLg:scale-100 -mt-28 phoneLg:mt-10  min-h-[90svh]'>
         
-        </p>
-        </section>
-
-        <section className="mainbody-content interests">
-
-        <h4 className='interests title'>Interests </h4>
-        <div className='interests content' >
-          <ol className="interest list" id="projects">
-            <li>{data[0].interests[0]}</li>
-            <li >{data[0].interests[1]}</li>
-            <li >{data[0].interests[2]}</li>
-          </ol>
-                
-        </div>
-        
-          </section>
-          <section className="mainbody-content projects" >
-          <Project 
-                darkmode = {props.darkmode}
-          />
-          
-          </section>
-
-        <section className="mainbody-content stack">
-
-        <b className='stack title'>Stack</b>
-        <ul className='stack list'>
-                  <li>HTML</li>
-                  <li>CSS  </li>
-                  <li id="contact">Javascript</li>
-                  {/* <li>PHP</li> */}
-                  
-          </ul>
-        </section>
-
-          {/* <section className='mainbody-more'>
-
-        <details>
-          <summary className='more title'>Read more</summary>
-          <p className='more content'>Credits to <a href="https://v2.scrimba.com/learn-react-c0e" target="_blank">Bob Ziroll</a></p>
-          
-        </details>
-          </section> */}
-          <section className="mainbody-content contact">
-            <Contact />
-            
-          </section>
+        {/* <Outlet /> */}
+        <About />
+        <Projects />
           {/* resume  */}
-          {/* <h6 className="resume">
-            Download Resume
-          </h6> */}
+          <h6 className=" fixed opacity-0 bottom-10  right-5 laptop:bottom-20 laptop:right-10 p-3 laptop:scale-100  scale-[0.65] tablet:scale-75 rounded-full w-max cursor-pointer text-white bg-darkpink dark:bg-cyan-400 hover:bg-cyan-600 duration-500 z-30 ">
+          <div className="flex relative   z-30  before:duration-00 before:content-['] hover:before:content-['Download_Resume'] before:text-sm before:z-0 before:hover:ring-2 before:rounded-lg before:w-0 hover:before:w-max before:absolute before:bottom-10 before:right-8  before:p-1 ">
+            <TbDownload className="text-4xl z-30" />
+
+          </div>
+            {/* Download Resume */}
+          </h6>
       </div>
       
       

@@ -4,6 +4,7 @@
  transition: 1.5s ease-in-out;
  color: black;
  box-sizing: border-box;
+ height: 100dvh;
 
 }
 button, a {
@@ -27,16 +28,16 @@ details {
 .container{
  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) ;
   color: black;
-  background: linear-gradient(45deg, rgba(81, 0, 255, 0.384), rgba(81, 11, 179, 0.241), rgba(128, 0, 128, 0.217), rgba(9, 4, 154, 0.328));
+  background: linear-gradient(45deg, #5100ff62, #510bb33d, #80008037, #09049a54);
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
 }
 .container.dark {
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.483), purple, rgba(0, 0, 0, 0.669));
-    background-color: rgba(0, 0, 255, 0.589);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.483), purple, #000000ab);
+    background-color: #0000ff96;
 }
 .navbar{
-  position:fixed;
+  /* position:fixed; */
   margin-bottom: 20px;
   width: 100%;
   top: 0;
@@ -44,7 +45,7 @@ details {
   justify-content: space-between;
   align-items: center;
   box-shadow:  0 0 10px #8a045c;
-  background: linear-gradient(45deg, rgba(81, 0, 255, 0.161), rgba(81, 11, 179, 0.241), rgba(128, 0, 128, 0.217), rgba(9, 4, 154, 0.252));
+  background: linear-gradient(45deg, #5100ff29, #510bb33d, #80008037, #09049a40);
   background-color: rgba(255, 255, 255, 0.906);
   transition:  0.5s ease-in-out;
   z-index: 1000;
@@ -52,8 +53,8 @@ details {
 
 .navbar.dark{
   box-shadow:  0 0 10px rgba(6, 139, 200, 0.917);
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.744), rgba(72, 11, 87, 0.944), rgba(0, 0, 0, 0.34));
-  background-color: rgba(102, 0, 255, 0.347);
+  background: linear-gradient(45deg, #000000be, #480b57f1, #00000057);
+  background-color: #6600ff58;
   color: #fff; 
 }
 .navbar.dark a{
@@ -97,7 +98,7 @@ details {
 .burger-bar {
   position: relative;
   width: 35px;
-  height: 0.5em;
+  height: 0.5;
   background-color: #480631;
   border-radius: 0.5em;
   }
@@ -292,7 +293,7 @@ details {
   gap: 100px;
   transition:  0.3s ease;
   padding: 50px;
-  padding-top: 140px;
+  /* padding-top: 140px; */
 
 }
 .header.dark{
@@ -323,7 +324,7 @@ details {
   font-weight: 700;
   text-wrap: nowrap;
   border-radius: 6px;
-  border-bottom: 2px solid rgb(111, 16, 189);
+  border-bottom: 2px solid #6f10bd;
   margin: 0;
   margin-bottom: 15px;
 }
@@ -451,6 +452,7 @@ details {
   align-items: center;
   margin: 10px;
   margin-bottom:30px ;
+  min-height: 30svh
   
 }
 .mainbody.dark{
@@ -525,11 +527,14 @@ details {
 }
 
 .mainbody.dark .about.content > b {
-  color: rgb(0, 221, 255);
+  color: #00ddff;
 }
 .interest.list{
   font-weight: 500;
   font-family:  'Trebuchet Ms';
+}
+.mainbody-content.project{
+  margin: 30px;
 }
 .project.title{
   width: max-content;
