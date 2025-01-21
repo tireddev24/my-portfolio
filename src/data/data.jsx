@@ -16,7 +16,7 @@ export default {
         whatsapp: "wa.me/+2348085958442",
         email:"michaelamao442@gmail.com",
         ig:'https://www.instagram.com/_sore.funmi?igsh=MWhzeXJsZTM4cWJ5dg==',
-        github : 'https://github.com/mich-demo23',
+        github : 'https://github.com/tireddev24',
         twitter : 'https://x.com/only_migel?t=_pjw7j26CYYi_PBbqblVfA&s=09',
         linkedin: 'https://www.linkedin.com/in/michael-amao'
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { BsWhatsapp } from "react-icons/bs";
-import { SiInstagram } from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 import { PiGithubLogoBold } from "react-icons/pi";
 import { FaLinkedinIn } from "react-icons/fa";
 const linkclass = " tablet:p-2 tablet:h-14  px-1 text-4xl tablet:w-16 rounded-md  tablet:-mr-1 z-30 duration-500  tablet:text-5xl"
@@ -9,8 +9,8 @@ const linkclass = " tablet:p-2 tablet:h-14  px-1 text-4xl tablet:w-16 rounded-md
 
  function Footer (){
     const links = [
+        { link:'Email', data: 'mailto:michaelamao442@gmail.com',icon: <SiGmail className={`${linkclass} text-red-500 ` }  />, color:' before:bg-gradient-to-tr before:from-red-500 before:from-62% before:via-[#f2a60c] before:via-27% before:to-[#08851b]  *:hover:text-white ' },
         { link:'Whatsapp', data: 'wa.me/+2348085958442', icon: <BsWhatsapp className={`${linkclass}  text-green-500 `} />, color: 'before:bg-green-500 dark:before:bg-green-600 *:hover:text-white'  },
-        { link:'Instagram', data: 'https://www.instagram.com/_sore.funmi',icon: <SiInstagram className={`${linkclass}` } />, color:'before:bg-gradient-to-bl before:from-[#8a3ab9] before:from-35% before:to-[#f58529] *:hover:text-white' , text:"bg-gradient-to-tr from-[#8a3ab9] to-[#f58529] bg-clip-text text-transarent *:hover:text-white duration-500"},
         { link:'Github', data: 'https://github.com/mich-demo23', icon: <PiGithubLogoBold className={`${linkclass} text-[#2e4053]`} />, color: 'before:bg-gray-600 dark:before:bg-[#2e4053] *:hover:text-white' },
         { link:'LinkedIn', data: 'https://www.linkedin.com/in/michael-amao', icon: <FaLinkedinIn  className={`${linkclass} text-[#0077b5] `} />, color: 'before:bg-[#0077b5] *:hover:text-white'  },
     ]
@@ -36,10 +36,12 @@ const linkclass = " tablet:p-2 tablet:h-14  px-1 text-4xl tablet:w-16 rounded-md
               </div>
             
               </div>  
-          <small className='tablet:text-[19px] text-black dark:text-slate-600 tracking-wide font-bold font-mono  '>&copy; 2025 TiredDev Development.</small>
+          <small className='before:bg-gradient-to-r before:from-red-500 before:from-25% before:via-[#f2a60c] before:via-75% before:to-[#08851b]  tablet:text-[19px] text-black dark:text-slate-600 tracking-wide font-bold font-mono  '>&copy; 2025 TiredDev Development.</small>
         </footer>
         </>
     )
 }
 
 export default Footer
+
+//#3e65cf,#c71610,#f2a60c,#3b60c4,#08851b
