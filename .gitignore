@@ -23,9 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-
-#tailwind
-tailwind.config.js
-postcss.config.js
-
-

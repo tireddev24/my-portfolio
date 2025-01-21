@@ -9,7 +9,7 @@ function About(){
         <div id='about' className=" my-10  text-[14px] tablet:text-[17px] flex flex-col mx-[10%] desktop:mx-[15%]  desktop:items-start">
              <section className='mainbody-content about ' >
         <h4 className='section-title  '> About </h4>
-        <p className='content ml-5   mt-3  wide_desktop:max-w-[90%] '> I&apos;m 
+        <p className='content ml-5   mt-3  wide:max-w-[90%] '> I&apos;m 
            <b className="scale-70 "> {data.fullName}. </b> {data.about}
         </p>
         </section>

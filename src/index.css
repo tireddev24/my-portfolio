@@ -4,10 +4,11 @@
 
 
 @layer components {
-    .section-title{
-        @apply p-[7px] tracking-wider uppercase text-[15px]  border-l-2 tablet:border-l-4 border-l-black border-solid border-b-2 tablet:border-b-4 border-b-[#8a045c] pb-1 w-min rounded-md tablet:text-[18px] font-semibold dark:border-darkText;
-    }    
+  .section-title{
+      @apply p-[7px] tracking-wider uppercase text-[15px]  border-l-2 tablet:border-l-4 border-l-black border-solid border-b-2 tablet:border-b-4 border-b-[#8a045c] pb-1 w-min rounded-md tablet:text-[18px] font-semibold dark:border-darkText;
+  }  
 }
+
 
 
 .wiggle{  animation: deg 2.5s infinite ;    }

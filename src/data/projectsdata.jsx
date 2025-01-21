@@ -29,7 +29,7 @@ export default [
         description: '',
         github: 'https://github.com/mich-demo23/Cafeteria-Project',
         isLive: false,
-        url : "",
+        url : "#",
         alt : "Cafeteria page",
         class: ''
 
@@ -40,8 +40,8 @@ export default [
         projectImage : `${memegen}`,
         description: '',
         github: 'https://github.com/mich-demo23/meme-generator',
-        url : "https://meme-gen-1.netlify.app/",
-        isLive: true,
+        url : "#",
+        isLive: false,
         alt : "Meme generator page ",
         class: ''
 
@@ -64,7 +64,7 @@ export default [
         projectImage : `${calculator}` ,
         description: 'A basic calculator built with html, css and javascript',
         github: 'https://github.com/mich-demo23/Basic-calculator',
-        url: "",
+        url: "#",
         isLive: false,
         alt: "Calculator page",
         class: ''
@@ -76,8 +76,8 @@ export default [
         projectImage : `${kudaclone}` ,
         description: 'A clone of the Kuda Microfinance Bank web site',
         github: 'https://github.com/Shadowdevsbu/kuda-clone',
-        isLive: false,
-        url: "",
+        isLive: true,
+        url: "https://white-ocean-04314c40f.5.azurestaticapps.net/",
         alt: "Kuda clone page",
         class: ''
 

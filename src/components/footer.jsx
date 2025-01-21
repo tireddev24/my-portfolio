@@ -21,22 +21,22 @@ const linkclass = " tablet:p-2 tablet:h-14  px-1 text-4xl tablet:w-16 rounded-md
 
             <h4 className="uppercase text-sm tablet:text-xl font-bold w-max border-b-2 border-solid border-darkpink dark:border-cyan-400  rounded-md tablet:p-2 pb-1 ml-[20%] ">Let&apos;s connect </h4>
             <div className='tablet:mx-auto laptop:w-auto tablet: scale-90 tablet:w-[50%] laptop:mx-[0%]' >
-            <div className='my-3  mb-1 flex items-center gap-4 tablet:gap-0 justify-center tablet:items-start laptop:flex laptop:items-center laptop:justify-center tablet:grid tablet:grid-cols-2  laptop:gap-20'>
+            <div className='my-3  mb-1 flex items-center gap-4 tablet:gap-2 justify-center tablet:items-start laptop:flex laptop:items-center laptop:justify-center tablet:grid tablet:grid-cols-2  laptop:gap-20'>
             {
-                links.map((prop)=> 
-                (
-                    <>
-                        <a href={prop.data} target='_blank' className={`${prop.color} before:rounded-md  before:duration-500 before:z-0 before:border-1 before:h-[100%] before:absolute  before:w-[0%] before:hover:w-[100%]  relative  border-1 cursor-pointer  duration-500 border-purple-700 rounded-md flex gap- items-center `}>
+                links.map((prop, key)=> 
+                (   
+                    
+                        <a href={prop.data} key={key} target='_blank' className={`${prop.color} before:rounded-3xl before:duration-500 before:z-0 before:border-1 before:h-[100%] before:absolute  before:w-[0%] before:hover:w-[100%]  relative  border-1 cursor-pointer  duration-500 border-purple-700 rounded-md flex gap- items-center `}>
                         {prop.icon}
                         <p className={`${prop.text} mr-2 text-xl z-30 hidden tablet:block font-semibold`}>{prop.link}</p>
                         </a>                     
-                    </>
+                    
                 ))
             }
               </div>
             
               </div>  
-          <small className='tablet:text-[19px] text-black dark:text-slate-600 tracking-widest tablet:tracking-wider  '>&copy; 2024 TiredDev Development.</small>
+          <small className='tablet:text-[19px] text-black dark:text-slate-600 tracking-wide font-bold font-mono  '>&copy; 2025 TiredDev Development.</small>
         </footer>
         </>
     )

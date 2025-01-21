@@ -78,9 +78,9 @@ function Navbar(props){
                   
                     </div>
                     <ul className=' flex flex-col items-center uppercase  p-2 px-2 font-semibold *:m-[15px] *:rounded-md w-[300px] *:border-y-2 *:border-transparent *:border-solid '>
-                    { links.map((prop) => 
-                    (<>
-                        <li  key={prop.key} className={`relative py-1 cursor-pointer  duration-500`} > 
+                    { links.map((prop, key) => 
+                    (
+                        <li  key={key} className={`relative py-1 cursor-pointer  duration-500`} > 
                   <Link to={prop.id} spy={true} smooth={true} offset={-75} duration={500}  
                   className = {customHoverClass} onClick={closeBurger}
                 //   className= {({isActive}) => isActive ? ` ` : ` ${customHoverClass} opacity-50 text-cyan-200` }
@@ -88,7 +88,7 @@ function Navbar(props){
 
                   </Link>
                         </li>
-                    </>
+                    
                     ))}
                    </ul>
                     
@@ -103,19 +103,19 @@ function Navbar(props){
 
                 
                 {/* navigation */}
-             <div className='hidden wide:flex  items-center justify-between text-xl uppercase font-semibold tracking-wide rounded-lg '>
-                   <ul className='list-none flex justify-between wide_desktop:*:mx-10 *:mx-5  *:border-transparent *:rouned-lg '>
+             <div className=' hidden wide:flex items-center justify-between text-xl uppercase font-semibold tracking-wide rounded-lg '>
+                   <ul className='list-none flex justify-between desktop:*:mx-10  *:mx-5  *:border-transparent *:rouned-lg '>
                     { links.map((prop, key) => 
-                    (<>
+                    (
                         <li  key={key} className='bg:transparent  target:text-yellow-400 ease-out duration-200'> 
-                  <Link to={prop.id}  spy={true} smooth={true} offset={-75} duration={500}  
+                  <Link to={prop.id}  spy={true} smooth={true} offset={-80} duration={400}  
                   className = {`${linkClass} `}
                 //   className= {({isActive}) => isActive ? `${linkClass}  dark:border-slate-950 hover:scale-[1.0] border-darkpink border-b-4 rounded-md` : `${linkClass} ${customHoverClass} hover:opacity-100 opacity-50 text-cyan-200` } 
                    >{prop.title}
 
                    </Link>
                         </li>
-                    </>
+                    
                     ))}
                    </ul>
                 </div>
@@ -127,7 +127,7 @@ function Navbar(props){
                     // onClick={props.toggle}
                 />     
                 </div>
-                <div className='navbar-time absolute text-red-500' >
+                <div className=' navbar-time absolute text-red-500' >
                     <div className='flip-time'>
                         <div className='flip-time-inner'>
                             <div className='flip-time-front'>{props.time}</div>

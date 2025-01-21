@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-import './index.css'
-// import './App.css'
+
 import Header from './components/header'
 import Body from './components/body';
 import Navbar from './components/navbar';
@@ -11,7 +10,6 @@ import { useEffect, useState } from 'react';
 export default function App(){
     const [mode, setMode] = useState(JSON.parse(localStorage.getItem('mode')) || false ) 
     // console.log(mode)
-
     
     function toggleDarkMode(){
         setMode(prevMode => !prevMode)
