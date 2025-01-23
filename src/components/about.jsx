@@ -32,9 +32,9 @@ function About(){
       <b className='section-title '>Technologies</b>
     <ul className='stack list list-disc list-inside ml-5  mt-4 font-semibold *:marker:text-darkpink *:dark:marker:text-darkText drop-shadow-xl drop-shadow-darkpink'>
           <li>HTML</li>
-          <li>CSS  </li>
+          <li>CSS</li>
           <li >Javascript</li>
-          <li>React</li>
+          <li>React JS</li>
           <li >Tailwind CSS</li>
       </ul>
       </section>

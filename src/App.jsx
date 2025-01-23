@@ -41,7 +41,7 @@ export default function App(){
     }
 
     return (
-        <div className='overflow-hidden bg-white dark:bg-slate-900 dark:text-white   '>
+        <div className='overflow-hidden    bg-red-100  dark:bg-slate-900 dark:text-white   '>
         {/* <RouterProvider router={router}/> */}
         <Navbar 
             toggle = {toggleDarkMode}
