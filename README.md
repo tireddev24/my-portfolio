@@ -1,9 +1,9 @@
 # My Porfolio
 
-Projects 📈 , skillset 🔧 , specialities 🦾
+Projects 📈 , Skillset 🔧 , Specialities 🦾
 
 
-C:\Users\ThisdevlsTired\Documents\Programming\react-new\myApp\src\assets\images\portfolio.png
+![Uploading portfolio.png…]()
 
 
 
