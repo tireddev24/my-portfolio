@@ -3,7 +3,7 @@
 Projects 📈 , Skillset 🔧 , Specialities 🦾
 
 
-![Uploading portfolio.png…]()
+![portfolio](https://github.com/user-attachments/assets/c5c9c335-d756-4c89-8451-f6305cbd0dd8)
 
 
 
