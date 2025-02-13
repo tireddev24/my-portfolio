@@ -13,7 +13,7 @@ export default function Projects (props) {
        <div id='projects' className="  -mb-12 phoneLg:mb-10 phoneLg:my-10  mx-[10%] desktop:mx-[15%] flex flex-col tems-center">
           <section className=" relative"   >
           <p className="section-title">Projects</p>
-            <div className=" -ml-4 phoneLg:ml-0 tablet:grid tablet:gap-4 tablet:grid-cols-2 laptop:grid-cols-[300px,250px] place-items-center desktop:grid-cols-3 mt-4 mb-10 desktop:gap-5 laptop:gap-10 "  >
+            <div className=" -ml-4 phoneLg:ml-0 tablet:grid tablet:gap-4 tablet:grid-cols-2 desktop:grid-cols-3 mt-4 mb-10 desktop:gap-5 laptop:gap-10 "  >
            {projectsdata.map((proj, key) =>  
            (
           <div  key={key} className={` ${proj.class}   laptop:hover:translate-y-[-10px]  hover:z-30 z-20 duration-500 h-[250px] tablet:h-[300px] laptop:h-[400px] min-w-[400px] projects link font-bold   ml-0 relative`}  >
