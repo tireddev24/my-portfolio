@@ -3,7 +3,7 @@
 Projects 📈 , skillset 🔧 , specialities 🦾
 
 
-![Screenshot 2025-01-21 204549](https://github.com/user-attachments/assets/f6a1678a-46cf-4a51-8050-14e1c231505d)
+C:\Users\ThisdevlsTired\Documents\Programming\react-new\myApp\src\assets\images\portfolio.png
 
 
 
