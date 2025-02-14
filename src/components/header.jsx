@@ -15,7 +15,7 @@ function Header (props) {
     
            <header id='header' className="relative mt-[3em] phoneLg:mt-[6rem]  laptop:mt-[8rem] scale-100 " >
     
-            <div className='header flex flex-col mx-[1%] laptop:mx-[6%] wide_desktop:mx-[0%] items-center wide_desktop:items-center   laptop:gap-5 wide_desktop:gap-20 desktop:flex-row p-3'>
+            <div className='header flex flex-col mx-[10%] laptop:mx-[6%] wide_desktop:mx-[18%] items-center wide_desktop:items-center   laptop:gap-5 wide_desktop:gap-20 desktop:flex-row p-3'>
 
                 {/* image */}
                 <img src={photo} className="header-photo dark:brightness-75 h-[20rem] w-[20rem]  tablet:h-[22rem] tablet:w-[20rem] laptop:w-[25rem] laptop:h-[30rem] desktop:w-[30rem]   desktop:h-full  rounded-[10%]  duration-500" />
