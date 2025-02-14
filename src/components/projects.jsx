@@ -9,7 +9,7 @@ export default function Projects (props) {
 
 
     return (
-        <>
+        
        <div id='projects' className="  -mb-12 phoneLg:mb-10 phoneLg:my-10  mx-[10%] desktop:mx-[15%] flex flex-col item-center">
           <section className=""   >
           <p className="section-title  ">Projects</p>
@@ -40,14 +40,12 @@ export default function Projects (props) {
               </div>
             </div>
            
-           )  ) 
+            ))
            }
         
         </div>
-    
           </section>
-        </div>
-        </>
-      
+           </div>
+ 
     )
 }

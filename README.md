@@ -1,9 +1,9 @@
 # My Porfolio
 
-Projects 📈 , skillset 🔧 , specialities 🦾
+Projects 📈 , Skillset 🔧 , Specialities 🦾
 
 
-![Screenshot 2025-01-21 204549](https://github.com/user-attachments/assets/f6a1678a-46cf-4a51-8050-14e1c231505d)
+![portfolio](https://github.com/user-attachments/assets/c5c9c335-d756-4c89-8451-f6305cbd0dd8)
 
 
 
