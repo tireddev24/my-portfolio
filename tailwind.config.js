@@ -22,7 +22,8 @@ module.exports = {
         laptop: '1024px',  
         desktop: '1280px',
         wide:' 1500px',
-        wide_desktop:'1920px'
+        wide_desktop:'1920px',
+        wider_desktop:'2000px'
       }
       },
     },

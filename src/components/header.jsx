@@ -8,23 +8,17 @@ import { FaCode } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 // import { TbDownload } from "react-icons/tb";
 
-function Header () {
+function Header (props) {
 
 
     return (
-        <>
-           <header id='header' className="relative mt-10 phoneLg:mt-20 laptop:mt-20 phoneLg:scale-100 scale-95">
-           {/* <h6 className=" fixed  opacity-100 p-3  scale-[0.65] tablet:scale-75 rounded-full w-max cursor-pointer text-white bg-darkpink dark:bg-cyan-400 hover:bg-cyan-600 duration-500 z-30 ">
-          <div className="   z-30   before:duration-300 before:content-['] hover:before:content-['Download_Resume'] before:text-sm before:z-0 before:hover:ring-2 before:rounded-lg before:w-0 hover:before:w-max before:absolute before:bottom-10 before:right-8  before:p-1 ">
-            <TbDownload className="text-4xl z-30" />
-
-          </div>
-          </h6> */}
-
-            <div className='header flex flex-col mx-[15%] items-center wide_desktop:items-center desktop:mx-[20%]  desktop:flex-row p-3'>
+    
+           <header id='header' className="relative mt-[3em] phoneLg:mt-[6rem]  laptop:mt-[8rem] scale-100 " >
+    
+            <div className='header flex flex-col mx-[1%] laptop:mx-[6%] wide_desktop:mx-[0%] items-center wide_desktop:items-center   laptop:gap-5 wide_desktop:gap-20 desktop:flex-row p-3'>
 
                 {/* image */}
-                <img src={photo} className="header-photo dark:brightness-75 w-[450px] scale-[1] rounded-[10%]  duration-500" />
+                <img src={photo} className="header-photo dark:brightness-75 h-[20rem] w-[20rem]  tablet:h-[22rem] tablet:w-[20rem] laptop:w-[25rem] laptop:h-[30rem] desktop:w-[30rem]   desktop:h-full  rounded-[10%]  duration-500" />
 
                 {/* info part */}
                 <div className=" flex scale-[0.85] phoneLg:scale-100 flex-col justify-center items-center desktop:ml-20 duration-500">
@@ -58,7 +52,7 @@ function Header () {
                 
             </div>
            </header>
-        </>
+        
     )
 }
 

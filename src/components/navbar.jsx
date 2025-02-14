@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 
@@ -39,7 +37,7 @@ function Navbar(props){
         {link: '/projects', id:'projects', title:'projects'},
         {link: '/contact', id:'contact', title:'contact'}
     ]
-
+     
     const closeBurger = () => {
         setShow(false)
         setBurgerClass('  opacity-100  ')
@@ -47,8 +45,8 @@ function Navbar(props){
         
         return (
             <>
-            <nav className='  fixed z-50 w-full'>
-            <div className=' backdrop-blur-md relative shadow-sm  shadow-[#8a045b]  max-h-12 phoneLg:max-h-96 flex  items-center justify-between min-w-96  p-3 tablet:p-3 tablet:mb-[20px]   duration-500 z-10 
+            <nav className='  fixed z-50 w-full  '>
+            <div className=' backdrop-blur-md relative shadow-sm  shadow-[#8a045b]  h-12 phoneLg:h-[4rem] wide_desktop:h-[6rem] flex  items-center justify-between min-w-96  p-3 tablet:p-3  duration-500 z-10 
             dark:shadow-darkText '>  
 
                 {/* burger */}

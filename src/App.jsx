@@ -40,17 +40,21 @@ export default function App(){
         setIsMenuClicked(prevMode => !prevMode)
     }
 
+    const [count, setCount] = useState(0)
+    
     return (
-        <div className='overflow-hidden    bg-red-100  dark:bg-slate-900 dark:text-white   '>
+        <div className='overflow-hidden    bg-red-100  dark:bg-slate-900 dark:text-white   ' >
         {/* <RouterProvider router={router}/> */}
         <Navbar 
             toggle = {toggleDarkMode}
             darkmode = {mode}
             toggleMenu = {menuClicked}
             isMenuClicked = {isMenuClicked}
+            count = {count}
         />
         <Header
             darkmode = {mode}
+            setCount = {setCount}
             />
         <Body />
         
