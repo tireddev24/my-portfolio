@@ -89,7 +89,7 @@ export default [
     description: 'A web application built with the MERN stack. You can view, create, edit and delete product records. ',
     github: `https://github.com/${username}/product-store`,
     isLive: true,
-    url: "https://my-product-store.onrender.com/",
+    url: "https://my-product-store2.onrender.com/",
     alt: "Product store page",
     class: ''
     }
