@@ -5,15 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCv0g_FxwVy-VgST7ZcyW0RoCGZX99BDiU",
-  authDomain: "my-portfoilio-1ed5c.firebaseapp.com",
-  projectId: "my-portfoilio-1ed5c",
-  storageBucket: "my-portfoilio-1ed5c.firebasestorage.app",
-  messagingSenderId: "927612951484",
-  appId: "1:927612951484:web:bd2b845e8a8f8a6322a9b9",
-  measurementId: "G-K426P1TZVW",
-};
+import { firebaseConfig } from "./functions/secrets";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
