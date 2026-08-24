@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 
-import { firebaseConfig } from '../secrets';
+import { firebaseConfig } from '../lib/secrets';
 
 const app = initializeApp(firebaseConfig);
 

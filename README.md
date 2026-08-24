@@ -25,6 +25,15 @@ The whole site currently lives on one route (`/`):
 Firebase config is read from environment variables (see below) rather than committed to the
 repo.
 
+This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
+
+```bash
+npm run build     # production build
+npm run preview   # preview the production build
+npm run lint       # eslint
+npm run format     # prettier
+npm run check      # lint + format check
+```
 ## Getting started
 
 ```bash

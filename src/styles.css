@@ -12,6 +12,7 @@
 @theme {
   --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   --color-sand-50: #faf8f5;
   --color-sand-100: #f0ebe3;
@@ -20,6 +21,13 @@
   --color-sand-600: #a08a6a;
   --color-sand-800: #8b7355;
   --color-sand-900: #3c3225;
+
+  /* Anchor + accent — replaces the flat sand-only palette with a real
+     high-contrast anchor (ink) and a single deliberate accent (forest),
+     so headlines and key moments have something to push against. */
+  --color-ink: #201b14;
+  --color-accent: #3f5d45;
+  --color-accent-soft: #eef1ea;
 
   --shadow-tactile: 0 8px 30px rgb(139 115 85 / 0.08);
   --shadow-tactile-hover: 0 20px 40px rgb(139 115 85 / 0.12);
@@ -42,6 +50,57 @@
   animation: reveal 0.8s var(--ease-out-expo) both;
 }
 
+/* Signature element: an oversized outlined wordmark sitting behind the
+   hero, ghosted into the sand background. Purely decorative — aria-hidden
+   in markup — and never intercepts pointer events. */
+@utility ghost-mark {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(63 93 69 / 0.14);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@utility ghost {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 700;
+  /* line-height: 1; */
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(63 93 69 / 0.14);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+@utility status-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  padding: 6px 14px;
+  border: 1px solid rgb(63 93 69 / 0.25);
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+@utility status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -56,7 +115,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
+  --color-primary: var(--ink);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -93,13 +152,14 @@
   --card-foreground: oklch(0.32 0.025 60);
   --popover: oklch(0.978 0.008 80);
   --popover-foreground: oklch(0.32 0.025 60);
-  --primary: oklch(0.55 0.04 65);
+  --primary: oklch(42.812% 0.141 261.571);
+  --ink: #201b14;
   --primary-foreground: oklch(0.978 0.008 80);
   --secondary: oklch(0.953 0.012 80);
   --secondary-foreground: oklch(0.32 0.025 60);
   --muted: oklch(0.953 0.012 80);
   --muted-foreground: oklch(0.55 0.04 65);
-  --accent: oklch(0.8 0.04 80);
+  --accent: #3f5d45;
   --accent-foreground: oklch(0.32 0.025 60);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
@@ -178,7 +238,7 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-sand-400) 30%, transparent);
-    color: var(--color-sand-900);
+    background: color-mix(in oklab, var(--color-accent) 25%, transparent);
+    color: var(--color-ink);
   }
 }
