@@ -1,44 +1,29 @@
-Welcome to your new TanStack Start app!
+# Michael Amao — Portfolio
 
-# Getting Started
+Personal portfolio site for Michael Amao, software engineer. A single-page, editorial-style
+site built around a custom **"Warm Sand"** design system — tactile, masonry-led layout with
+soft shadows, a sand/beige palette, and a Space Grotesk + DM Sans typeface pairing.
 
-To run this application:
+Content (name, bio, projects, experience, education, social links) is not hardcoded — it's
+pulled at runtime from a single Firestore document, so the site can be
+updated by editing that document rather than shipping code changes.
 
-```bash
-npm install
-npm run dev
-```
+## Stack
 
-# Building For Production
+- **TanStack Start** — React 19, file-based routing (TanStack Router), SSR
+- **Tailwind CSS v4** for styling, with a full **shadcn/ui** component set installed (Radix
+  primitives, `cmdk`, `vaul`, `sonner`, etc.) available for future sections
+- **Firebase Firestore** as a lightweight CMS — see [Content model](#content-model) below
+- **Vercel Analytics**
 
-To build this application for production:
+## Page structure
 
-```bash
-npm run build
-```
+The whole site currently lives on one route (`/`):
 
-## Testing
+`Nav → Hero → About → Interests → Selected Works (masonry project grid) → Experience timeline → Footer (Education + Contact)`
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
-```bash
-npm run test
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Uninstall the packages: `npm install @tailwindcss/vite tailwindcss -D`
-
-## Linting & Formatting
+Firebase config is read from environment variables (see below) rather than committed to the
+repo.
 
 This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
 
@@ -49,3 +34,31 @@ npm run lint       # eslint
 npm run format     # prettier
 npm run check      # lint + format check
 ```
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+You'll need a `.env` with your Firestore project credentials:
+
+```
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+### Other scripts
+
+```bash
+npm run build     # production build
+npm run preview   # preview the production build
+npm run lint       # eslint
+npm run format     # prettier
+npm run check      # lint + format check
+```
+
