@@ -1,9 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Fragment } from 'react';
+import { Fragment, useState, useRef } from 'react';
 import { fetchSingleDocument } from '@/lib/firebase';
 import { useQuery } from '@tanstack/react-query';
-import TypographyAnimation from '@/components/typography';
 import ScrambleText from '@/components/scramble';
+import CodeLoader from '@/components/codeloader';
+import { useCloseOnOutsideClick } from '@/components/closeOnOutsideClick';
+import { Menu, X } from 'lucide-react';
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -37,6 +39,13 @@ const PROJECT_ASPECTS = [
 
 type Project = { projectName: string; projectDescription: string; projectImage: string };
 
+const NAV_LINKS = [
+  { href: '#about', label: 'About' },
+  { href: '#interests', label: 'Interests' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Log' },
+];
+
 // Numbered section heading — encodes the page's real order (01 → 04)
 // instead of a repeated pill badge, so each section reads as a distinct step.
 function SectionHeading({ number, title }: { number: string; title: string }) {
@@ -53,39 +62,68 @@ function Index() {
     queryKey: ['data', 'personal'],
     queryFn: () => fetchSingleDocument('data', 'personal'),
   });
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useCloseOnOutsideClick(menuRef, () => setMenuOpen(false), menuOpen);
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col justify-center place-items-center  bg-sand-50 font-body text-ink">
-        Loading...
+        <CodeLoader />
+        Building portfolio...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen  bg-sand-50 font-body text-ink">
+    <div className="min-h-screen w-full  bg-sand-50 font-body text-ink overflow-x-hidden relative">
       <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-sand-400/20 bg-sand-50/80 px-6 py-4 backdrop-blur-md">
-        <a href="#top" className="font-display text-xl font-bold uppercase tracking-tight">
+        <a href="#top" className="font-display text-xl tracking-wider font-bold uppercase ">
           {data?.firstName + ' ' + data?.lastName}
         </a>
         <div className="hidden gap-8 text-xs font-medium uppercase tracking-widest sm:flex">
-          <a href="#about" className="transition-colors hover:text-accent">
-            About
-          </a>
-          <a href="#interests" className="transition-colors hover:text-accent">
-            Interests
-          </a>
-          <a href="#projects" className="transition-colors hover:text-accent">
-            Projects
-          </a>
-          <a href="#experience" className="transition-colors hover:text-accent">
-            Log
-          </a>
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} className="transition-colors hover:text-accent">
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          className="grid size-9 place-items-center rounded-full transition-colors hover:bg-sand-100 sm:hidden"
+        >
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+        {/* Mobile Menu */}
+        <div
+          ref={menuRef}
+          className={`overflow-hidden border-t absolute  w-full flex left-0 justify-center place-items-center top-16 bg-sand-50 border-sand-400/20 transition-[max-height] duration-300 ease-in-out sm:hidden ${
+            menuOpen ? 'max-h-64' : 'max-h-0 border-t-0'
+          }`}
+        >
+          <div className="flex flex-col items-center gap-1 px-6 py-4 text-sm font-medium uppercase tracking-widest">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-2 py-3 transition-colors hover:bg-sand-100 hover:text-accent"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </nav>
       <span
         aria-hidden="true"
-        className="ghost -right-20 top-20 text-[34rem] sm:-top-16 sm:text-[58rem]    "
+        className="ghost  -right-20 top-20 text-[34rem] sm:-top-16 sm:text-[58rem]    "
       >
         {data?.firstName?.[0] ?? ''}
         {data?.lastName?.[0] ?? ''}
