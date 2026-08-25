@@ -242,3 +242,218 @@
     color: var(--color-ink);
   }
 }
+
+@utility code-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+@utility code-loader__svg {
+  width: 180px;
+  height: auto;
+  overflow: visible;
+}
+
+/*
+ * Permanent outline
+ */
+@utility code-loader-outline {
+  fill: none;
+  stroke: #000;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/*
+ * Animated solid layer
+ */
+@utility code-loader__fill {
+  fill: none;
+  stroke: #000;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  pathlength: 1;
+
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+
+  animation: fill-code 2.8s ease-in-out infinite;
+}
+
+@theme {
+  --animate-fill-code: fill-code 2.8s ease-in-out infinite;
+
+  @keyframes fill-code {
+    /* Empty */
+    0% {
+      stroke-dashoffset: 1;
+    }
+
+    /* Begin filling */
+    15% {
+      stroke-dashoffset: 0.8;
+    }
+
+    /* Half filled */
+    30% {
+      stroke-dashoffset: 0.45;
+    }
+
+    /* Completely filled */
+    45% {
+      stroke-dashoffset: 0;
+    }
+
+    /* Hold */
+    55% {
+      stroke-dashoffset: 0;
+    }
+
+    /* Begin emptying */
+    70% {
+      stroke-dashoffset: 0.45;
+    }
+
+    /* Mostly empty */
+    85% {
+      stroke-dashoffset: 0.8;
+    }
+
+    /* Completely empty */
+    100% {
+      stroke-dashoffset: 1;
+    }
+  }
+}
+
+@utility code-loader-fill {
+  fill: black;
+
+  animation: code-loader-fill 3.5s ease-in-out infinite;
+}
+
+@theme {
+  --animate-code-loader-fill: code-loader-fill 3.5s ease-in-out infinite;
+
+  @keyframes code-loader-fill {
+    /* Empty */
+    0% {
+      transform: translateX(-300px);
+    }
+
+    /* Begin filling */
+    15% {
+      transform: translateX(-200px);
+    }
+
+    /* Half filled */
+    30% {
+      transform: translateX(-50px);
+    }
+
+    /* Completely filled */
+    45% {
+      transform: translateX(0);
+    }
+
+    /* Hold completely filled */
+    55% {
+      transform: translateX(0);
+    }
+
+    /* Begin emptying */
+    70% {
+      transform: translateX(50px);
+    }
+
+    /* Mostly empty */
+    85% {
+      transform: translateX(200px);
+    }
+
+    /* Completely empty */
+    100% {
+      transform: translateX(300px);
+    }
+  }
+}
+
+@theme {
+  --animate-code-left: code-left 3.6s ease-in-out infinite;
+  --animate-code-slash: code-slash 3.6s ease-in-out infinite;
+  --animate-code-right: code-right 3.6s ease-in-out infinite;
+
+  @keyframes code-left {
+    0% {
+      stroke-dashoffset: 1;
+    }
+
+    15% {
+      stroke-dashoffset: 0;
+    }
+
+    25% {
+      stroke-dashoffset: 0;
+    }
+
+    55% {
+      stroke-dashoffset: 1;
+    }
+
+    100% {
+      stroke-dashoffset: 1;
+    }
+  }
+
+  @keyframes code-slash {
+    0%,
+    25% {
+      stroke-dashoffset: 1;
+    }
+
+    40% {
+      stroke-dashoffset: 0;
+    }
+
+    50% {
+      stroke-dashoffset: 0;
+    }
+
+    70% {
+      stroke-dashoffset: 1;
+    }
+
+    100% {
+      stroke-dashoffset: 1;
+    }
+  }
+
+  @keyframes code-right {
+    0%,
+    50% {
+      stroke-dashoffset: 1;
+    }
+
+    65% {
+      stroke-dashoffset: 0;
+    }
+
+    75% {
+      stroke-dashoffset: 0;
+    }
+
+    95% {
+      stroke-dashoffset: 1;
+    }
+
+    100% {
+      stroke-dashoffset: 1;
+    }
+  }
+}

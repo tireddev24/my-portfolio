@@ -34,6 +34,7 @@ npm run lint       # eslint
 npm run format     # prettier
 npm run check      # lint + format check
 ```
+
 ## Getting started
 
 ```bash
@@ -61,4 +62,3 @@ npm run lint       # eslint
 npm run format     # prettier
 npm run check      # lint + format check
 ```
-
