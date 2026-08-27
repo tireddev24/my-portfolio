@@ -5,7 +5,9 @@ import { useQuery } from '@tanstack/react-query';
 import ScrambleText from '@/components/scramble';
 import CodeLoader from '@/components/codeloader';
 import { useCloseOnOutsideClick } from '@/components/closeOnOutsideClick';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ExternalLink } from 'lucide-react';
+import Github from '../assets/github.svg';
+import { link } from 'fs';
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -23,6 +25,13 @@ export const Route = createFileRoute('/')({
           'Portfolio of Michael Amao, a software engineer focused on creating intuitive and performant web applications.',
       },
     ],
+    links: [
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+        type: 'image/x-icon',
+      },
+    ],
   }),
   component: Index,
 });
@@ -37,7 +46,14 @@ const PROJECT_ASPECTS = [
   'aspect-[3/4]',
 ];
 
-type Project = { projectName: string; projectDescription: string; projectImage: string };
+type Project = {
+  projectName: string;
+  description: string;
+  projectImage: string;
+  isLive: boolean;
+  url: string;
+  github: string;
+};
 
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
@@ -173,7 +189,7 @@ function Index() {
             {data?.interests?.map((i: { title: string; description: string }) => (
               <div
                 key={i.title}
-                className="rounded-3xl border border-white/50 bg-sand-100 p-6 shadow-[var(--shadow-tactile)] transition-all duration-500 hover:border-accent/30 hover:shadow-[var(--shadow-tactile-hover)]"
+                className="rounded-3xl border border-white/50 bg-sand-100 p-6 shadow-[shadow-tactile] transition-all duration-500 hover:border-accent/30 hover:shadow-[(--shadow-tactile-hover)]"
               >
                 <h3 className="mb-2 font-display text-lg font-bold">{i.title}</h3>
                 <p className="text-sm text-ink/60">{i.description}</p>
@@ -189,55 +205,96 @@ function Index() {
           </div>
 
           <div className="columns-1 gap-6 space-y-6 md:columns-2 lg:columns-3">
-            {data?.projects?.map((p: Project, idx: number) => (
-              <Fragment key={p.projectName ?? idx}>
-                <article
-                  className="animate-reveal group break-inside-avoid rounded-3xl border border-white/50 bg-sand-100 p-4 shadow-[var(--shadow-tactile)] transition-all duration-500 hover:border-accent/30 hover:shadow-[var(--shadow-tactile-hover)]"
-                  style={{ animationDelay: `${Math.min(idx, 5) * 100}ms` }}
-                >
-                  <img
-                    src={p.projectImage}
-                    alt={p.projectName}
-                    width={800}
-                    height={1000}
-                    loading="lazy"
-                    className={`mb-4 w-full rounded-2xl object-cover ${PROJECT_ASPECTS[idx % PROJECT_ASPECTS.length]}`}
-                  />
-                  <h3 className="px-2 font-display text-xl font-bold transition-colors group-hover:text-accent">
-                    {p.projectName}
-                  </h3>
-                  <p className="px-2 pb-2 text-sm text-sand-800/60">{p.projectDescription}</p>
-                </article>
+            {data?.projects?.map((p: Project, idx: number) => {
+              const isLive = Boolean(p.isLive && p.url.includes('https'));
+              const href = isLive ? p.url : p.github;
+              const linkText = isLive ? 'Live' : 'Github';
+              const linkWidth = 8 + (linkText.length - 1) + 'ch';
 
-                {/* Engineering log — a real, specific voice dropped into the
-                    grid in place of a generic design aphorism. Fixed after
-                    the second project regardless of how many projects exist. */}
-                {idx === 1 && (
-                  <article className="animate-reveal flex aspect-square break-inside-avoid flex-col justify-between rounded-3xl bg-ink p-8 text-sand-50 shadow-xl [animation-delay:200ms]">
-                    <div>
-                      <span className="mb-4 block font-mono text-[10px] uppercase tracking-widest text-sand-400">
-                        // engineering log
-                      </span>
-                      <p className="font-mono text-sm leading-relaxed text-sand-100">
-                        shipped the retry queue today.
-                        <br />
-                        fewer silent failures &gt;
-                        <br />
-                        clever abstractions.
-                      </p>
-                    </div>
-                    <div className="flex items-end justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-accent">
-                        Log
-                      </span>
-                      <div className="grid size-10 place-items-center rounded-full border border-sand-50/20">
-                        →
+              return (
+                <Fragment key={p.projectName ?? idx}>
+                  <article
+                    className="animate-reveal group relative break-inside-avoid rounded-3xl border border-white/50 bg-sand-100 p-4 shadow-[v(--shadow-tactile)] transition-all duration-500 hover:border-accent/30 hover:shadow-[(--shadow-tactile-hover)]"
+                    style={{ animationDelay: `${Math.min(idx, 5) * 100}ms` }}
+                  >
+                    <img
+                      src={p.projectImage}
+                      alt={p.projectName}
+                      width={800}
+                      height={1000}
+                      loading="lazy"
+                      className={`mb-4 w-full rounded-2xl object-cover ${PROJECT_ASPECTS[idx % PROJECT_ASPECTS.length]}`}
+                    />
+                    <div className="flex items-start justify-between gap-2 px-2 pb-2">
+                      <div className="">
+                        <h3 className="font-display text-xl font-bold">{p.projectName}</h3>
+                        <p className="text-sm overflow-visible text-sand-800/60">{p.description}</p>
                       </div>
+
+                      {href && (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${p.projectName} — open ${isLive ? 'live site' : 'GitHub repo'}`}
+                          className={` hover :w-[${linkWidth}] group/link relative flex  justify-end pr-2 w-11 h-11  size-9 shrink-0 place-items-center rounded-full  text-sand-50 ease-out transition-all   duration-300 hover :bg-accent sm:opacity-100 sm:group-hover:opacity-100`}
+                        >
+                          <span className=" absolute left-4 whitespace-nowrap text-sm font-medium opacity-0 delay-100 transition-opacity  group-hover/link:opacity-0  ">
+                            View {linkText}
+                          </span>
+
+                          {/* Icon */}
+
+                          {isLive ? (
+                            <ExternalLink
+                              // size={15}
+                              className="      relative    text-ink  flex shrink-0 justify-center"
+                            />
+                          ) : (
+                            <>
+                              <div className=" w-11 h-11  rounded-full relative flex  shrink-0 items-center justify-end-safe ">
+                                <img
+                                  className="rounded-full   w-7 h-7 flex  justify-end   "
+                                  src={Github}
+                                />
+                              </div>
+                            </>
+                          )}
+                        </a>
+                      )}
                     </div>
                   </article>
-                )}
-              </Fragment>
-            ))}
+
+                  {/* Engineering log — a real, specific voice dropped into the
+                    grid in place of a generic design aphorism. Fixed after
+                    the second project regardless of how many projects exist. */}
+                  {idx === 1 && (
+                    <article className="animate-reveal flex aspect-square break-inside-avoid flex-col justify-between rounded-3xl bg-ink p-8 text-sand-50 shadow-xl [animation-delay:200ms]">
+                      <div>
+                        <span className="mb-4 block font-mono text-[10px] uppercase tracking-widest text-sand-400">
+                          // engineering log
+                        </span>
+                        <p className="font-mono text-sm leading-relaxed text-sand-100">
+                          shipped the retry queue today.
+                          <br />
+                          fewer silent failures &gt;
+                          <br />
+                          clever abstractions.
+                        </p>
+                      </div>
+                      <div className="flex items-end justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-accent">
+                          Log
+                        </span>
+                        <div className="grid size-10 place-items-center rounded-full border border-sand-50/20">
+                          →
+                        </div>
+                      </div>
+                    </article>
+                  )}
+                </Fragment>
+              );
+            })}
 
             <article className="animate-reveal break-inside-avoid rounded-3xl border border-sand-400/20 bg-white/40 p-6 backdrop-blur-sm">
               <h4 className="mb-6 font-display text-xs font-bold uppercase tracking-widest text-sand-400">
