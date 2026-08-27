@@ -23,14 +23,11 @@ export const newField = async (documentId: string, name: string, arrayOfObjects:
 };
 
 export const fetchSingleDocument = async (collectionName: string, documentId: string) => {
-  console.log(firebaseConfig);
+  //console.log(firebaseConfig);
   const docRef = doc(db, collectionName, documentId);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log('Document data:', docSnap.data());
-    console.log('Document ID:', docSnap.id);
-
     return docSnap.data();
     // You can also get the document ID directly from the snapshot
   } else {
