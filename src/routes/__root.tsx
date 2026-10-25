@@ -79,21 +79,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => {
     return {
       meta: [
-        { charSet: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { title: 'Portfolio' },
+        { title: 'Michael Amao — Software Engineer' },
         {
           name: 'description',
-          content: 'Multidisciplinary designer crafting tactile digital artifacts.',
+          content:
+            'Portfolio of Michael Amao, a software engineer focused on creating intuitive and performant web applications.',
         },
-        { property: 'og:title', content: 'Portfolio' },
+        { property: 'og:title', content: 'Michael Amao — Software Engineer' },
         {
           property: 'og:description',
-          content: 'Multidisciplinary designer crafting tactile digital artifacts.',
+          content:
+            'Portfolio of Michael Amao, a software engineer focused on creating intuitive and performant web applications.',
         },
-        { property: 'og:type', content: 'website' },
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:site', content: '@Lovable' },
       ],
       links: [
         {
