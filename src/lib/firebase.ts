@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 
-import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import { arrayUnion, collection, getDocs, getFirestore } from 'firebase/firestore';
 import { doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 
 import { firebaseConfig } from '../lib/secrets';
@@ -23,16 +23,42 @@ export const newField = async (documentId: string, name: string, arrayOfObjects:
 };
 
 export const fetchSingleDocument = async (collectionName: string, documentId: string) => {
-  //console.log(firebaseConfig);
   const docRef = doc(db, collectionName, documentId);
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
+    // console.log('Document data:', docSnap.data());
+    // console.log('Document ID:', docSnap.id);
+
     return docSnap.data();
     // You can also get the document ID directly from the snapshot
   } else {
     // docSnap.data() will be undefined in this case
     console.log('No such document!');
     return null;
+  }
+};
+
+interface Project {
+  id: number;
+  projectName: string;
+  description: string;
+  alt: string;
+  url: string;
+  github: string;
+  projectImage: string;
+  isLive: boolean;
+}
+
+export const addProject = async (project: Project, documentId: string) => {
+  try {
+    const projectRef = doc(db, 'data', documentId);
+
+    await updateDoc(projectRef, {
+      projects: arrayUnion(project),
+    });
+    console.log('Project added successfully!');
+  } catch (error) {
+    console.error('Error adding project:', error);
   }
 };

@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Fragment, useState, useRef } from 'react';
-import { fetchSingleDocument } from '@/lib/firebase';
+import { addProject, fetchSingleDocument } from '@/lib/firebase';
 import { useQuery } from '@tanstack/react-query';
 import ScrambleText from '@/components/scramble';
 import CodeLoader from '@/components/codeloader';
